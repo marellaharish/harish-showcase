@@ -28,10 +28,14 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="fade-in">
             <div className="relative w-32 h-32 mx-auto mb-8">
-              <div className="w-full h-full bg-gradient-primary rounded-full flex items-center justify-center animate-pulse-glow">
-                <span className="text-4xl font-bold text-primary-foreground">HM</span>
+              <div className="w-full h-full rounded-full overflow-hidden animate-pulse-glow ring-4 ring-primary/20">
+                <img 
+                  src="src/assets/profile-main.jpg" 
+                  alt="Harish Marella - Professional Profile" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="absolute inset-0 bg-gradient-primary rounded-full animate-ping opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-primary rounded-full animate-ping opacity-10"></div>
             </div>
           </div>
 

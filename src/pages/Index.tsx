@@ -3,7 +3,7 @@ import Loader from "@/components/Loader";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import Skills from "@/components/sections/Skills";
+import SkillsNew from "@/components/sections/SkillsNew";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Testimonials from "@/components/sections/Testimonials";
@@ -40,7 +40,7 @@ const Index = () => {
       <main>
         <Hero />
         <About />
-        <Skills />
+        <SkillsNew />
         <Projects />
         <Experience />
         <Testimonials />
