@@ -23,11 +23,11 @@ const SkillsNew = () => {
       description: "Creating beautiful, responsive user interfaces",
       gradient: "from-blue-500 to-cyan-500",
       skills: [
-        { name: "React.js", level: 95, color: "bg-blue-500" },
-        { name: "Next.js", level: 90, color: "bg-gray-800" },
-        { name: "TypeScript", level: 88, color: "bg-blue-600" },
-        { name: "Tailwind CSS", level: 92, color: "bg-cyan-400" },
-        { name: "Vue.js", level: 85, color: "bg-green-500" }
+        { name: "React.js", color: "bg-blue-500" },
+        { name: "Next.js", color: "bg-gray-800" },
+        { name: "TypeScript", color: "bg-blue-600" },
+        { name: "Tailwind CSS", color: "bg-cyan-400" },
+        { name: "Vue.js", color: "bg-green-500" }
       ]
     },
     {
@@ -36,11 +36,11 @@ const SkillsNew = () => {
       description: "Building robust server-side applications",
       gradient: "from-green-500 to-emerald-500",
       skills: [
-        { name: "Node.js", level: 90, color: "bg-green-600" },
-        { name: "Python", level: 88, color: "bg-yellow-500" },
-        { name: "Express.js", level: 85, color: "bg-gray-700" },
-        { name: "FastAPI", level: 82, color: "bg-teal-500" },
-        { name: "GraphQL", level: 78, color: "bg-pink-500" }
+        { name: "Node.js", color: "bg-green-600" },
+        { name: "Python", color: "bg-yellow-500" },
+        { name: "Express.js", color: "bg-gray-700" },
+        { name: "FastAPI", color: "bg-teal-500" },
+        { name: "GraphQL", color: "bg-pink-500" }
       ]
     },
     {
@@ -49,11 +49,11 @@ const SkillsNew = () => {
       description: "Managing data efficiently and securely",
       gradient: "from-purple-500 to-violet-500",
       skills: [
-        { name: "PostgreSQL", level: 88, color: "bg-blue-700" },
-        { name: "MongoDB", level: 85, color: "bg-green-700" },
-        { name: "Supabase", level: 90, color: "bg-emerald-600" },
-        { name: "Redis", level: 80, color: "bg-red-600" },
-        { name: "Prisma", level: 85, color: "bg-indigo-600" }
+        { name: "PostgreSQL", color: "bg-blue-700" },
+        { name: "MongoDB", color: "bg-green-700" },
+        { name: "Supabase", color: "bg-emerald-600" },
+        { name: "Redis", color: "bg-red-600" },
+        { name: "Prisma", color: "bg-indigo-600" }
       ]
     },
     {
@@ -62,11 +62,11 @@ const SkillsNew = () => {
       description: "Deploying and scaling applications",
       gradient: "from-orange-500 to-red-500",
       skills: [
-        { name: "AWS", level: 82, color: "bg-orange-500" },
-        { name: "Docker", level: 85, color: "bg-blue-600" },
-        { name: "Vercel", level: 92, color: "bg-black" },
-        { name: "GitHub Actions", level: 80, color: "bg-gray-800" },
-        { name: "Terraform", level: 75, color: "bg-purple-600" }
+        { name: "AWS", color: "bg-orange-500" },
+        { name: "Docker", color: "bg-blue-600" },
+        { name: "Vercel", color: "bg-black" },
+        { name: "GitHub Actions", color: "bg-gray-800" },
+        { name: "Terraform", color: "bg-purple-600" }
       ]
     }
   ];
@@ -149,25 +149,11 @@ const SkillsNew = () => {
                   </div>
 
                   {/* Skills */}
-                  <div className="space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skill.name} className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <div className="flex items-center space-x-2">
-                            <div className={`w-3 h-3 rounded-full ${skill.color}`}></div>
-                            <span className="font-medium text-sm">{skill.name}</span>
-                          </div>
-                          <span className="text-xs text-muted-foreground font-mono">{skill.level}%</span>
-                        </div>
-                        <div className="w-full bg-muted/50 rounded-full h-1.5 overflow-hidden">
-                          <div 
-                            className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out`}
-                            style={{ 
-                              width: `${skill.level}%`,
-                              animationDelay: `${0.2 + (0.1 * skillIndex)}s`
-                            }}
-                          ></div>
-                        </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <div key={skill.name} className="flex items-center space-x-2 bg-muted/30 rounded-lg px-3 py-2 hover:bg-muted/50 transition-colors">
+                        <div className={`w-2 h-2 rounded-full ${skill.color}`}></div>
+                        <span className="font-medium text-sm">{skill.name}</span>
                       </div>
                     ))}
                   </div>
