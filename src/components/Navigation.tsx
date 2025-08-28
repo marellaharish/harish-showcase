@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, X, Moon, Sun, Download } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +22,9 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
+    { name: "Work", href: "#projects" },
+    { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -39,25 +38,25 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? "glass shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? "glass shadow-md" : "bg-transparent"
+        }`}
     >
       <div className="section-container">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div 
-            className="flex items-center space-x-2 cursor-pointer"
+          {/* Brand */}
+          <button
+            className="flex items-center gap-3"
             onClick={() => scrollToSection("#home")}
           >
-            <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
-              <span className="text-lg font-bold text-primary-foreground">HM</span>
-            </div>
-            <span className="text-xl font-bold gradient-text">Harish Marella</span>
-          </div>
+            <Avatar className="h-9 w-9 ring-2 ring-primary/20">
+              <AvatarImage src="/src/assets/profile-main.jpg" alt="Harish" />
+              <AvatarFallback>H</AvatarFallback>
+            </Avatar>
+            <span className="text-base sm:text-lg font-semibold text-foreground">Harish</span>
+          </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.name}
@@ -67,7 +66,14 @@ const Navigation = () => {
                 {item.name}
               </button>
             ))}
-            
+            <a
+              href="/Harish_CV.pdf"
+              download
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card text-card-foreground hover:border-primary/50 hover:shadow-md transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download CV</span>
+            </a>
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -108,6 +114,14 @@ const Navigation = () => {
                     {item.name}
                   </button>
                 ))}
+                <a
+                  href="/Harish_CV.pdf"
+                  download
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card text-card-foreground hover:border-primary/50 transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download CV</span>
+                </a>
               </div>
             </div>
           </div>
